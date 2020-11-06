@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Quote List',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.pink,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: MyHomePage(title: 'Quote List'),
@@ -30,11 +30,22 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
+  List<String> quotes = [
+    'Doe, a deer, a female deer',
+    'Ray, a drop of golden sun',
+    'Me, a name I call myself'
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[200],
       appBar: AppBar(
         title: Text(widget.title),
+        centerTitle: true,
+      ),
+      body: Column(
+        children: quotes.map((quote) => Text(quote)).toList(),
       ),
     );
   }
