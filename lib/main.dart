@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'quote.dart';
 
 void main() {
   runApp(MyApp());
@@ -30,10 +31,10 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
-  List<String> quotes = [
-    'Doe, a deer, a female deer',
-    'Ray, a drop of golden sun',
-    'Me, a name I call myself'
+  List<Quote> quotes = [
+    Quote(text: 'Doe, a deer, a female deer', author: 'Dorothy Lime'),
+    Quote(text: 'Ray, a drop of golden sun', author: 'Ray Goldman'),
+    Quote(text: 'Me, a name I call myself', author: 'Mellie Fisher'),
   ];
 
   @override
@@ -45,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
         centerTitle: true,
       ),
       body: Column(
-        children: quotes.map((quote) => Text(quote)).toList(),
+        children: quotes.map((quote) => Text('${quote.text} - ${quote.author}')).toList(),
       ),
     );
   }
