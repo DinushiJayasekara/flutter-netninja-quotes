@@ -38,7 +38,13 @@ class _MyHomePageState extends State<MyHomePage> {
   ];
 
   Widget quoteTemplate(quote) {
-    return QuoteCard(quote: quote);
+    return QuoteCard(
+        quote: quote,
+        delete: () {
+          setState(() {
+            quotes.remove(quote);
+          });
+        });
   }
 
   @override
